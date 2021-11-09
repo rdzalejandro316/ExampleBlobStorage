@@ -11,12 +11,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("DataBaseBlobStorage")]
-[assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("DataBaseBlobStorage_cc5t1mfs_wpftmp")]
+[assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
-[assembly: System.Reflection.AssemblyProductAttribute("DataBaseBlobStorage")]
-[assembly: System.Reflection.AssemblyTitleAttribute("DataBaseBlobStorage")]
+[assembly: System.Reflection.AssemblyProductAttribute("DataBaseBlobStorage_cc5t1mfs_wpftmp")]
+[assembly: System.Reflection.AssemblyTitleAttribute("DataBaseBlobStorage_cc5t1mfs_wpftmp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // Generado por la clase WriteCodeFragment de MSBuild.

@@ -1,5 +1,4 @@
-﻿using Microsoft.Azure.Storage;
-using Microsoft.Azure.Storage.Blob;
+﻿using Azure.Storage.Blobs;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -54,7 +53,7 @@ namespace DataBaseBlobStorage
             }
         }
 
-        private void BtnUpload_Click(object sender, RoutedEventArgs e)
+        private async void BtnUpload_Click(object sender, RoutedEventArgs e)
         {
             try
             {
@@ -62,22 +61,21 @@ namespace DataBaseBlobStorage
 
                 string name = Path.GetFileName(pathUpload);
                 string paths = Path.GetFullPath(pathUpload);
-                
+
+                MessageBox.Show(paths);
+
 
                 string connection = "DefaultEndpointsProtocol=https;AccountName=almacenamientotemp;AccountKey=t3eiYMeR3DZKWA2ONFaA0xBbxBqVgGjl+FAhIud0ruC4majBB3c+NGWqoyM4PTEPNIr1AfJSApRFOM5nTE/05A==;EndpointSuffix=core.windows.net";
 
-                CloudStorageAccount cloudStorage = CloudStorageAccount.Parse(connection);
 
-                CloudBlobClient clienteBlobl = cloudStorage.CreateCloudBlobClient();
-                CloudBlobContainer container = clienteBlobl.GetContainerReference("desdecodigo");
-                container.CreateIfNotExists();
-                container.SetPermissions(new BlobContainerPermissions { PublicAccess = BlobContainerPublicAccessType.Blob });
-
-                CloudBlockBlob miBlob = container.GetBlockBlobReference(name);
+                BlobServiceClient blobServiceClient = new BlobServiceClient(connection);
+                BlobContainerClient containerClient = blobServiceClient.GetBlobContainerClient("desdecodigo");
+                BlobClient blobClient = containerClient.GetBlobClient(name);
                 using (var fileStream = System.IO.File.OpenRead(paths))
                 {
-                    miBlob.UploadFromStream(fileStream);
+                    await blobClient.UploadAsync(fileStream, true);
                 }
+
                 MessageBox.Show("se subio el archivo exitosamente");
 
 

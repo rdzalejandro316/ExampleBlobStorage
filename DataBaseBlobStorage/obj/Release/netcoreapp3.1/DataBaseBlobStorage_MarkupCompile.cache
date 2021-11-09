@@ -1,20 +1,20 @@
 ﻿DataBaseBlobStorage
-1.0.0.0
+
 
 winexe
 C#
 .cs
-C:\Users\aleja\Desktop\blob\DataBaseBlobStorage\obj\Debug\netcoreapp3.1\
+C:\Users\aleja\Desktop\blob\DataBaseBlobStorage\obj\Release\netcoreapp3.1\
 DataBaseBlobStorage
 none
 false
-TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
+TRACE;RELEASE;NETCOREAPP;NETCOREAPP3_1;
 C:\Users\aleja\Desktop\blob\DataBaseBlobStorage\App.xaml
 11407045341
 
-5140510365
+3-1233169557
 197-1891517859
 MainWindow.xaml;
 
-False
+True
 
